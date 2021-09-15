@@ -17,7 +17,6 @@ export class CreateStatementController {
 
     const splittedPath = request.originalUrl.split('/');
 
-    console.log(splittedPath);
     let type = 'deposit' as OperationType;
     if(splittedPath.length === 6){
       type = 'transfer' as OperationType;

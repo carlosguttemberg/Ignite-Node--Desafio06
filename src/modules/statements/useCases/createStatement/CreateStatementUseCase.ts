@@ -44,8 +44,6 @@ export class CreateStatementUseCase {
       receiver_id
     });
 
-    console.log(receiver_id);
-
     if(type === 'transfer') {
       await this.statementsRepository.create({
         user_id: String(receiver_id),
