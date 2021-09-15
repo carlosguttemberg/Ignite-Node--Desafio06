@@ -1,10 +1,16 @@
-import { Statement } from "../../entities/Statement";
+enum OperationType {
+  DEPOSIT = 'deposit',
+  WITHDRAW = 'withdraw',
+  TRANSFER = 'transfer'
+}
 
-export type ICreateStatementDTO =
-Pick<
-  Statement,
-  'user_id' |
-  'description' |
-  'amount' |
-  'type'
->
+interface ICreateStatementDTO {
+  user_id: string;
+  description: string;
+  amount: number;
+  type: OperationType;
+  sender_id?: string;
+  receiver_id?: string;
+}
+
+export { ICreateStatementDTO }
